@@ -200,6 +200,13 @@ function render()
 
     theta += 1.0;
 
+    if(theta >= 360.0)
+    {
+        theta -= 360.0;
+        lightColorIndex =
+            (lightColorIndex + 1) % lightColors.length;
+    }
+
     let modelView =
         mult(
             translate(0.0, 0.0, -3.0),
@@ -235,9 +242,6 @@ function render()
         lightColorLoc,
         flatten(lightColors[lightColorIndex])
     );
-
-    lightColorIndex =
-        (lightColorIndex + 1) % lightColors.length;
 
     gl.drawArrays(
         gl.TRIANGLES,

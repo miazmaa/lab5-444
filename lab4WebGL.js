@@ -11,6 +11,16 @@ let theta = 0;
 let modelViewLoc;
 let projectionLoc;
 let lightDirectionLoc;
+let lightColorLoc;
+let lightColorIndex = 0;
+
+const lightColors = [
+    vec3(1.0, 0.0, 0.0),
+    vec3(0.0, 1.0, 0.0),
+    vec3(0.0, 0.0, 1.0),
+    vec3(1.0, 1.0, 0.0),
+    vec3(1.0, 0.0, 1.0)
+];
 
 // Cube vertices
 const vertices = [
@@ -172,6 +182,12 @@ window.onload = async function()
             "lightDirection"
         );
 
+    lightColorLoc =
+        gl.getUniformLocation(
+            program,
+            "lightColor"
+        );
+
     render();
 };
 
@@ -214,6 +230,14 @@ function render()
         lightDirectionLoc,
         flatten(vec3(1.0, 1.0, 1.0))
     );
+
+    gl.uniform3fv(
+        lightColorLoc,
+        flatten(lightColors[lightColorIndex])
+    );
+
+    lightColorIndex =
+        (lightColorIndex + 1) % lightColors.length;
 
     gl.drawArrays(
         gl.TRIANGLES,

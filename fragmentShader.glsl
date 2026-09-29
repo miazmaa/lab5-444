@@ -5,6 +5,7 @@ precision mediump float;
 in vec3 vNormal;
 
 uniform vec3 lightDirection;
+uniform vec3 lightColor;
 
 out vec4 fColor;
 
@@ -19,7 +20,7 @@ void main()
 
     vec3 color =
         ambient +
-        diffuse * vec3(1.0,0.0,2.0);
+        diffuse * lightColor;
 
     fColor = vec4(color, 1.0);
 }

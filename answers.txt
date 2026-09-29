@@ -1,0 +1,22 @@
+1.	This creates light to make the cube visible.
+2.	Deleting the lines of code will make the cube no longer visible on the canvas.
+3.	Only two faces of the cube are visible when they rotate to face the camera and then disappear
+4.	Can still see light but not dark faces. Now the entire cube is white.
+5.	The faces pointed towards the camera are brightest
+6.	3 faces are darker than the other one
+7.	None of the visible faces receive any additional light, it’s the faces the camera cannot see
+8.	Nothing changes
+9.	Those faces only receive slight light, not the same amount as the properly brightened faces
+10.	Magenta
+11.	The highlights fade in and out as they get closer to the camera
+12.	Two faces are bright white when facing the camera and then 2 faces are see-through when they face the camera
+
+Reflection Questions: 
+1.	Ambient light lights up every surface equally regardless of camera/light position
+2.	Light reflects in multiple directions when it hits a surface
+3.	It’s to show how light and shade reflects on a surface 
+4.	Light brightness 
+5.	Changes which faces of a 3D object are bright, as shown in this lab when the light faced the top face of the cube that the camera didn’t see
+6.	Changing light direction and intensity makes lighting appear more realistic and simulates real world light 
+7.	Animated light source
+8.	To make graphics more realistic or to set the tone of a game (ex: low lighting for a horror game)
